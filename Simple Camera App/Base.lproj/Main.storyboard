@@ -1,24 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Simple Camera View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SimpleCameraViewController" customModule="Simple_Camera_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKq-Bx-qe8">
+                                <rect key="frame" x="169" y="721" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="i4j-2l-DtW"/>
+                                    <constraint firstAttribute="width" constant="55" id="xQl-6u-Aae"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="CameraButton"/>
+                                <connections>
+                                    <action selector="capture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1zo-bZ-FBJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oKq-Bx-qe8" secondAttribute="bottom" constant="42" id="WYm-fY-WMa"/>
+                            <constraint firstItem="oKq-Bx-qe8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lcY-rG-mZt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="oKq-Bx-qe8" id="lC5-Cg-E28"/>
+                        <segue destination="HU4-3G-g83" kind="presentation" identifier="showPhoto" destinationCreationSelector="unwindToCameraView:" modalPresentationStyle="fullScreen" id="uOj-mr-doo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-47" y="4"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="ABz-2M-SQ0">
+            <objects>
+                <viewController id="HU4-3G-g83" customClass="PhotoViewController" customModule="Simple_Camera_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L8j-sA-PlT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="azz-KE-b93">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hG-wj-S4P">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sih-f8-wxW">
+                                        <rect key="frame" x="8" y="46" width="47" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="W1h-kI-Cvk"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="dwV-4c-dNw"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                                        <connections>
+                                            <segue destination="F6L-nu-KBq" kind="unwind" unwindAction="unwindToCameraViewWithSegue:" id="6xG-Hh-yXc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-iN-4ah">
+                                        <rect key="frame" x="324" y="46" width="61" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="61" id="R1c-cb-tgr"/>
+                                            <constraint firstAttribute="height" constant="35" id="wHB-jc-rmD"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Save"/>
+                                        <connections>
+                                            <action selector="save:" destination="HU4-3G-g83" eventType="touchUpInside" id="Pdy-aB-wmO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="sih-f8-wxW" firstAttribute="leading" secondItem="3hG-wj-S4P" secondAttribute="leading" constant="8" id="6L0-Eu-8dJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="dgN-iN-4ah" secondAttribute="trailing" constant="8" id="enf-9c-MGu"/>
+                                    <constraint firstItem="sih-f8-wxW" firstAttribute="top" secondItem="3hG-wj-S4P" secondAttribute="top" constant="46" id="gbm-wj-kEO"/>
+                                    <constraint firstAttribute="height" constant="100" id="saO-3N-U41"/>
+                                    <constraint firstItem="dgN-iN-4ah" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sih-f8-wxW" secondAttribute="trailing" constant="8" symbolic="YES" id="uvh-0T-XFV"/>
+                                    <constraint firstItem="dgN-iN-4ah" firstAttribute="top" secondItem="3hG-wj-S4P" secondAttribute="top" constant="46" id="wC8-M0-Emg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aPH-7q-RKs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aPH-7q-RKs" firstAttribute="trailing" secondItem="3hG-wj-S4P" secondAttribute="trailing" id="Dyn-lD-AQJ"/>
+                            <constraint firstItem="azz-KE-b93" firstAttribute="trailing" secondItem="aPH-7q-RKs" secondAttribute="trailing" id="Jgg-Ua-6qf"/>
+                            <constraint firstItem="3hG-wj-S4P" firstAttribute="top" secondItem="L8j-sA-PlT" secondAttribute="top" id="QRs-M2-mtf"/>
+                            <constraint firstAttribute="bottom" secondItem="azz-KE-b93" secondAttribute="bottom" id="REr-jd-l2q"/>
+                            <constraint firstItem="azz-KE-b93" firstAttribute="top" secondItem="L8j-sA-PlT" secondAttribute="top" id="ZCL-wd-upo"/>
+                            <constraint firstItem="3hG-wj-S4P" firstAttribute="leading" secondItem="aPH-7q-RKs" secondAttribute="leading" id="vJ2-Ix-jKw"/>
+                            <constraint firstItem="azz-KE-b93" firstAttribute="leading" secondItem="aPH-7q-RKs" secondAttribute="leading" id="vda-1q-kWI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="azz-KE-b93" id="Q6V-Pf-6Dg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dE-Gm-zfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="F6L-nu-KBq" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="965.64885496183206" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CameraButton" width="122" height="122"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

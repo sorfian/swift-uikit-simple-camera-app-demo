@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		D612E26D29D67E9200415738 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612E26C29D67E9200415738 /* AppDelegate.swift */; };
 		D612E26F29D67E9200415738 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612E26E29D67E9200415738 /* SceneDelegate.swift */; };
-		D612E27129D67E9200415738 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612E27029D67E9200415738 /* ViewController.swift */; };
 		D612E27429D67E9200415738 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D612E27229D67E9200415738 /* Main.storyboard */; };
 		D612E27629D67E9300415738 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D612E27529D67E9300415738 /* Assets.xcassets */; };
 		D612E27929D67E9300415738 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D612E27729D67E9300415738 /* LaunchScreen.storyboard */; };
+		D612E28129D67FE400415738 /* SimpleCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612E28029D67FE400415738 /* SimpleCameraViewController.swift */; };
+		D612E28329D683CE00415738 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612E28229D683CE00415738 /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D612E26929D67E9200415738 /* Simple Camera App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Camera App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D612E26C29D67E9200415738 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D612E26E29D67E9200415738 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D612E27029D67E9200415738 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D612E27329D67E9200415738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D612E27529D67E9300415738 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D612E27829D67E9300415738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D612E27A29D67E9300415738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D612E28029D67FE400415738 /* SimpleCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCameraViewController.swift; sourceTree = "<group>"; };
+		D612E28229D683CE00415738 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 			children = (
 				D612E26C29D67E9200415738 /* AppDelegate.swift */,
 				D612E26E29D67E9200415738 /* SceneDelegate.swift */,
-				D612E27029D67E9200415738 /* ViewController.swift */,
 				D612E27229D67E9200415738 /* Main.storyboard */,
 				D612E27529D67E9300415738 /* Assets.xcassets */,
 				D612E27729D67E9300415738 /* LaunchScreen.storyboard */,
 				D612E27A29D67E9300415738 /* Info.plist */,
+				D612E28029D67FE400415738 /* SimpleCameraViewController.swift */,
+				D612E28229D683CE00415738 /* PhotoViewController.swift */,
 			);
 			path = "Simple Camera App";
 			sourceTree = "<group>";
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D612E27129D67E9200415738 /* ViewController.swift in Sources */,
+				D612E28129D67FE400415738 /* SimpleCameraViewController.swift in Sources */,
+				D612E28329D683CE00415738 /* PhotoViewController.swift in Sources */,
 				D612E26D29D67E9200415738 /* AppDelegate.swift in Sources */,
 				D612E26F29D67E9200415738 /* SceneDelegate.swift in Sources */,
 			);
